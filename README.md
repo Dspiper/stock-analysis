@@ -1,8 +1,8 @@
-# stock-analysis
+# Stocks Analysis
 
 ## Overview of Project 
 ### Purpose
-In this project, we wanted to help Steve by expanding the dataset to handle the entire stock market over the last few years instead of a dozeon stocks. We refacftored the code we previously wrote to be more effiecent and handle the larger dataset, so Steve will be able to do more research for his parents. Link to the dataset can be found here: [VBA_Challenge](https://github.com/Dspiper/stock-analysis/blob/main/VBA_Challenge.xlsm)
+In this project, we wanted to help Steve by expanding the dataset to handle the entire stock market over the last few years instead of a dozen stocks. We refactored the code we previously wrote to be more efficient and handle the larger dataset, so Steve will be able to do more research for his parents. Link to the dataset can be found here: [VBA_Challenge](https://github.com/Dspiper/stock-analysis/blob/main/VBA_Challenge.xlsm)
 
 ## Results
 
@@ -14,7 +14,6 @@ Before refactoring the code, we were seeing a run time for 2017 and 2018 of 0.27
 
 ![VBA_Challenge_2017](https://github.com/Dspiper/stock-analysis/blob/main/Resources/VBA_Challenge_2017.png) 
 ![VBA_Challenge_2018](https://github.com/Dspiper/stock-analysis/blob/main/Resources/VBA_Challenge_2018.png)
-
 
 Some significant changes were made when refactoring the code. The biggest change was made in the if statements in the for loop. In the original code, we used the if statements `If Cells(j - 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then` to find the starting price of the current ticker and `If Cells(j + 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then` to find the ending price of the current ticker. In the refactored code, these if statments were modified to `If Cells(i - 1, 1).Value <> tickers(tickerIndex) Then` and `If Cells(i + 1, 1).Value <> tickers(tickerIndex) Then` to find the starting and ending and check if the current row is the first or last using the ticker index. We removed the And statement from the refactored because it is redundent. Also, we created the output arrays to hold the Ticker, Total Daily Volume, and Return.
 
